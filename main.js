@@ -34,3 +34,94 @@ console.log(ender[8]);
 // b) Den første indeksen i en array er 0.
 
 // c) Den siste indexen i en array er 9.
+
+// d) Lengden på en array er antallet elementer som er lagret i arrayen.
+
+// e) Sammenhengen er at indeksene i en array alltid starter på 0, mens length teller hvor mange elementer som finnes. Derfor er siste indeks alltid én mindre enn lengden på arrayen.
+
+
+// Oppgave 4
+// a) typeof operatøren vil alltid returnere "object" når du bruker den på en array, fordi arrays teknisk sett er objekter.
+
+// b)
+let a = [1, 2, 3];
+console.log(Array.isArray(a)); // true
+
+let b = "Hei";
+console.log(Array.isArray(b)); // false
+
+// c) 
+function sjekkArray(argument) {
+    if (Array.isArray(argument)) {
+        console.log("Argumentet er en array");
+    } else {
+        console.log("Argumentet er ikke en array");
+    }
+}
+
+sjekkArray([1, 2, 3]); // Argumentet er en array
+sjekkArray("Hei");      // Argumentet er ikke en array
+
+
+// Joakim Bøe-Sørbo - Oppgavesett 7b arrays
+
+// Oppgave 1
+let numbers = [10, 20, 30];
+console.log(numbers[1]);
+
+
+// Oppgave 2
+let greetings = [];
+greetings[0] = "hello";
+greetings[1] = "world";
+
+console.log(greetings);
+
+
+// Oppgave 3
+let tall = [1, 2, 3, 4, 5];
+console.log(tall.length);
+
+
+// Oppgave 4
+let fruits = ["apple", "banana", "cherry"];
+fruits[1] = "blueberry";
+
+console.log(fruits);
+
+
+// Oppgave 5
+let values = [5, 10, 15];
+values[3] = 20;
+
+console.log(values);
+
+
+// Oppgave 6
+let colors = ["red", "green", "blue"];
+console.log(colors[colors.length - 1]);
+
+
+// Oppgave 7
+let verdier = [7, 14, 21];
+console.log(verdier[0] < verdier[2]);
+
+
+// Oppgave 8
+let nums = [2, 4, 6, 8];
+console.log(nums[0] + nums[2]);
+
+
+// Oppgave 9
+let arrayOfArrays = [[1, 2, 3], [4, 5, 6]];
+console.log(arrayOfArrays[1][1]);
+
+
+// Oppgave 10
+let x = 100;
+let y = 200;
+let z = 300;
+
+let xyz = [x, y, z];
+
+console.log(xyz);
