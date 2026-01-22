@@ -1,121 +1,143 @@
-// Joakim Bøe-Sørbo - Oppgavesett 8a flytkontroll, loops
+// Joakim Bøe-Sørbo Oppgavesett 9 introduksjon oop literal objects
+
 // Oppgave 1
-// For-løkke, Gjentar en blokk med kode et bestemt antall ganger.
-for (let i = 0; i < 5; i++) {
-  console.log(`Step ${i + 1}: Walking east`);
-}
+const elev1 = {
+    fornavn: "Mikael",
+    etternavn: "Feldt",
+    alder: 16
+};
 
+const elev2 = {
+    fornavn: "Kim",
+    etternavn: "Tran",
+    alder: 67
+};
 
-// while-løkke, Fortsetter å kjøre så lenge en betingelse er sann.
-let n = 0;
-while (n < 3) {
-  console.log(`Current number: ${n}`);
-  n++;
-}
+const elev3 = {
+    fornavn: "Sander",
+    etternavn: "Tennstrand",
+    alder: 16
+};
 
+const elev4 = {
+    fornavn: "Jonatan",
+    etternavn: "Brekke",
+    alder: 16
+};
 
-// do...while-løkke, Utfører koden minst én gang før den sjekker betingelsen.
-let i = 0;
-do {
-  console.log(`Count: ${i}`);
-  i++;
-} while (i < 3);
-
-
-// for...in-løkke, Itererer over egenskaper i et objekt.
-const car = { make: "Ford", model: "Mustang" };
-for (const key in car) {
-  console.log(key, car[key]);
-}
-
-
-// for...of-løkke, Itererer over elementer i en iterable som en array.
-const arr = [3, 5, 7];
-for (const value of arr) {
-  console.log(value);
-}
+console.log(elev1.fornavn, elev1.etternavn, elev1.alder);
+console.log(elev2.fornavn, elev2.etternavn, elev2.alder);
+console.log(elev3.fornavn, elev3.etternavn, elev3.alder);
+console.log(elev4.fornavn, elev4.etternavn, elev4.alder);
 
 
 // Oppgave 2
-const navneliste = ['Geir', 'Espen', 'Ellen', 'Erik', 'Lars', 'Gunnar', 'Oda', 'Nina', 'Tine', 'Henrik', 'Agnethe'];
-
-for (const navn of navneliste) {
-    console.log(`${navn} har ${navn.length} bokstaver`);
+function skrivUtElev(elev) {
+    console.log(
+        "Navn: " + elev.fornavn +
+        " Etternavn: " + elev.etternavn +
+        " Alder: " + elev.alder
+    );
 }
-// henter direkte verdiene i arrayen, så man slipper å tenke på indekser.
+
+skrivUtElev(elev1);
+skrivUtElev(elev2);
+skrivUtElev(elev3);
+skrivUtElev(elev4);
 
 
 // Oppgave 3
-const nameliste = ['Geir', 'Espen', 'Ellen', 'Erik', 'Lars', 'Gunnar', 'Oda', 'Nina', 'Tine', 'Henrik', 'Agnethe'];
-
-for (let i = navneliste.length - 1; i >= 0; i--) {
-    console.log(navneliste[i]);
+/*
+function carFactory(seter, hestekrefter, modell, type) {
+    return {
+        seter: seter,
+        hestekrefter: hestekrefter,
+        modell: modell,
+        type: type
+    };
 }
-// Vi kan styre start, slutt og retning ved å manipulere indeksen. Derfor vanlig for-løkke
+
+const bil1 = carFactory(5, 150, "Toyota Corolla", "Sedan");
+const bil2 = carFactory(7, 200, "Volvo XC90", "SUV");
+const bil3 = carFactory(5, 180, "Volkswagen Passat", "Stasjonsvogn");
+const bil4 = carFactory(2, 300, "Mazda MX-5", "Sport");
+
+const biler = [bil1, bil2, bil3, bil4];
+*/
 
 
 // Oppgave 4
-function reduceToOddNumber(number) {
+//function carFactory(seter, hestekrefter, modell, type) {
+    //return {
+        //seter: seter,
+        //hestekrefter: hestekrefter,
+        //modell: modell,
+        //type: type,
 
-    if (typeof(number) === 'number') {
+        //genererSerienummer: function () {
+            //return Math.floor(Math.random() * 1000000);
+        //}
+    //};
+//}
 
-        while (number % 2 === 0) {
-            number = number / 2;
-        }
-        return number;
-    } else {
-        return "Argumentet er ikke et tall";
-    }
-}
+//const bil1 = carFactory(5, 150, "Toyota Corolla", "Sedan");
+//bil1.serienummer = bil1.genererSerienummer();
+
+//const bil2 = carFactory(7, 200, "Volvo XC90", "SUV");
+//bil2.serienummer = bil2.genererSerienummer();
+
+//const bil3 = carFactory(5, 180, "Volkswagen Passat", "Stasjonsvogn");
+//bil3.serienummer = bil3.genererSerienummer();
+
+//const bil4 = carFactory(2, 300, "Mazda MX-5", "Sport");
+//bil4.serienummer = bil4.genererSerienummer();
 
 
-console.log(reduceToOddNumber(48));
-console.log(reduceToOddNumber(7));
-console.log(reduceToOddNumber("hei"));
+
+//const biler = [bil1, bil2, bil3, bil4];
+
+//biler.forEach(bil => {
+    //console.log(
+        //"Serienummer: " + bil.serienummer +
+        //", Modell: " + bil.modell +
+        //", Type: " + bil.type +
+        //", Seter: " + bil.seter +
+        //", Hestekrefter: " + bil.hestekrefter
+    //);
+//});
 
 
 // Oppgave 5
-// do...while-løkke, Passer når vi vil kjøre koden minst én gang før vi sjekker en betingelse.
-// for...in-løkke, Passer best for objekter
-
-
-// Joakim Bøe-Sørbo - Oppgavesett 8a flytkontroll, loops
-// Oppgave 1
-let navn = ["Odin", "Thor", "Loki", "Freya", "Baldur", "Frigg", "Tyr", "Heimdall", "Hel", "Idunn", "Njord", "Skadi", "Fenrir", "Jormungandr", "Sleipnir"];
-
-for (let i = 0; i < navn.length; i++) {
-    console.log(navn[i]);
+function lagBilFactory(merke) {
+    return function (seter, hestekrefter, modell, type) {
+        return {
+            merke: merke,
+            seter: seter,
+            hestekrefter: hestekrefter,
+            modell: modell,
+            type: type
+        };
+    };
 }
 
 
-// Oppgave 2
-let tall = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30];
-let sum = 0;
-
-for (let i in tall) {
-    sum += tall[i];
-}
-
-console.log(sum);
+const fordFactory = lagBilFactory("Ford");
 
 
-// Oppgave 3
-let alleNavn = [
-  "Anne", "Jan", "Per", "Bjørn", "Ole", "Lars", "Inger", "Kjell",
-  "Kari", "Thomas", "Ingrid", "Svein", "Marit", "Knut", "Tor", "Liv",
-  "Geir", "Martin", "Hans", "Morten"
-];
-
-function tellNavn(navnSomSkalSjekkes, array) {
-    let antall = 0;
-    for (let i in array) {
-        if (array[i] === navnSomSkalSjekkes) {
-            antall++;
-        }
-    }
-    console.log(`${navnSomSkalSjekkes} er oppført ${antall} ganger i arrayen som er ${array.length} lang`);
-}
+const bil1 = fordFactory(5, 150, "Focus", "Sedan");
+const bil2 = fordFactory(7, 220, "Explorer", "SUV");
+const bil3 = fordFactory(2, 300, "Mustang", "Sport");
 
 
-tellNavn("Arne", alleNavn);
-tellNavn("Kari", alleNavn);
+const biler = [bil1, bil2, bil3];
+
+
+biler.forEach(bil => {
+    console.log(
+        "Merke: " + bil.merke +
+        ", Modell: " + bil.modell +
+        ", Type: " + bil.type +
+        ", Seter: " + bil.seter +
+        ", Hestekrefter: " + bil.hestekrefter
+    );
+});
